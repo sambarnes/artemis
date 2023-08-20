@@ -25,23 +25,23 @@ use artemis_core::types::{CollectorMap, ExecutorMap};
 #[derive(Parser, Debug)]
 pub struct Args {
     /// Ethereum node WS endpoint.
-    #[arg(long)]
+    #[arg(long, env)]
     pub wss: String,
 
     /// Key for the OpenSea API.
-    #[arg(long)]
+    #[arg(long, env)]
     pub opensea_api_key: String,
 
     /// Private key for sending txs.
-    #[arg(long)]
+    #[arg(long, env)]
     pub private_key: String,
 
     /// Address of the arb contract.
-    #[arg(long)]
+    #[arg(long, env)]
     pub arb_contract_address: String,
 
     /// Percentage of profit to pay in gas.
-    #[arg(long)]
+    #[arg(long, env)]
     pub bid_percentage: u64,
 }
 

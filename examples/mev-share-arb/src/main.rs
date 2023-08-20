@@ -25,16 +25,16 @@ use tracing_subscriber::{filter, prelude::*};
 #[derive(Parser, Debug)]
 pub struct Args {
     /// Ethereum node WS endpoint.
-    #[arg(long)]
+    #[arg(long, env)]
     pub wss: String,
     /// Private key for sending txs.
-    #[arg(long)]
+    #[arg(long, env)]
     pub private_key: String,
     /// MEV share signer
-    #[arg(long)]
+    #[arg(long, env)]
     pub flashbots_signer: String,
     /// Address of the arb contract.
-    #[arg(long)]
+    #[arg(long, env)]
     pub arb_contract_address: Address,
 }
 
